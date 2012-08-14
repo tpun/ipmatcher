@@ -46,5 +46,9 @@ describe 'Matcher' do
     it 'does not match anything less than 4 subnets' do
       subject.should_not be_match('1.2.3')
     end
+
+    it 'does not match anything more than 4 subnets' do
+      subject.should_not be_match('2.1.1.1.1.1')
+    end
   end
 end
