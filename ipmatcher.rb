@@ -26,9 +26,12 @@ class IPMatcher
     while sub_patterns.count > 0
       sub_pattern = sub_patterns.shift
       return false if start[sub_pattern].nil?
+      return true if start[sub_pattern] == true
+      return true if start[sub_pattern]['*'] == true
+
       start = start[sub_pattern]
     end
 
-    true
+    false
   end
 end
